@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Search Only</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f8f8f8;
-    }
-    .container {
-      max-width: 90%;
-      width: 500px;
-      margin: auto;
-      text-align: center;
-    }
-    .search-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    #ytSearch {
-      flex: 1;
-      padding: 10px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      outline: none;
-    }
-    #searchBtn {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    #searchBtn:hover {
-      background-color: #0056b3;
-    }
-    @media (max-width: 600px) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png"
+    />
+    <title>YouTube Search Only</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f8f8f8;
+      }
+      .container {
+        max-width: 90%;
+        width: 500px;
+        margin: auto;
+        text-align: center;
+      }
       .search-container {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
       }
       #ytSearch {
-        width: 100%;
-        margin-bottom: 10px;
+        flex: 1;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>YouTube Search</h1>
-    <div class="search-container">
-      <input
-        type="search"
-        name="ytSearch"
-        id="ytSearch"
-        placeholder="Enter search term..."
-        onkeydown="handleSearch(event)"
-      />
-      <button id="searchBtn" onclick="searchYouTube()">Search</button>
+      #searchBtn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      #searchBtn:hover {
+        background-color: #0056b3;
+      }
+      @media (max-width: 600px) {
+        .search-container {
+          flex-direction: column;
+        }
+        #ytSearch {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YouTube Search</h1>
+      <div class="search-container">
+        <input
+          type="search"
+          name="ytSearch"
+          id="ytSearch"
+          placeholder="Enter search term..."
+          onkeydown="handleSearch(event)"
+        />
+        <button id="searchBtn" onclick="searchYouTube()">Search</button>
+      </div>
     </div>
-  </div>
 
-  <script>
-    function searchYouTube() {
-      var searchTerm = document.getElementById("ytSearch").value;
-      if (searchTerm.trim() !== "") {
-        var searchUrl =
-          "https://www.youtube.com/results?search_query=" +
-          encodeURIComponent(searchTerm);
-        window.open(searchUrl);
+    <script>
+      function searchYouTube() {
+        var searchTerm = document.getElementById("ytSearch").value;
+        if (searchTerm.trim() !== "") {
+          var searchUrl =
+            "https://www.youtube.com/results?search_query=" +
+            encodeURIComponent(searchTerm);
+          window.open(searchUrl);
+        }
       }
-    }
 
-    function handleSearch(event) {
-      if (event.key === "Enter") {
-        searchYouTube();
+      function handleSearch(event) {
+        if (event.key === "Enter") {
+          searchYouTube();
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
